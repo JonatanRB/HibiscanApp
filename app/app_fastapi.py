@@ -16,7 +16,7 @@ import numpy as np
 import cv2
 from PIL import Image
 
-from hibiscus_ga_counter import process_image  # reutilizamos la lógica de archivo
+from app.hibiscus_ga_counter import process_image  # reutilizamos la lógica de archivo
 
 app = FastAPI(title="Hibiscus Fruit Counter API", version="1.0.0")
 
