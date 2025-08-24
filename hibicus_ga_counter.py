@@ -1,7 +1,3 @@
-"""
-hibiscus_ga_counter.py
-"""
-
 import argparse
 import json
 import os

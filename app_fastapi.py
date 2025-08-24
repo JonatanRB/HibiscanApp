@@ -1,12 +1,3 @@
-
-"""
-app_fastapi.py
-
-API simple con FastAPI que expone el contador de frutos de jamaica.
-- Endpoint: POST /count  (multipart/form-data con campo 'file')
-- Respuesta: JSON con conteo y, opcionalmente, imagen anotada en base64 si se solicita ?annotate=1
-"""
-
 import base64
 import io
 from fastapi import FastAPI, File, UploadFile, Query
