@@ -3,5 +3,5 @@ services:
     name: hibiscus-counter-api
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: ./start.sh
+    startCommand: bash start.sh
     plan: free
