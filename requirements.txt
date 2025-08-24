@@ -1,11 +1,10 @@
 fastapi
 uvicorn
 opencv-python
+opencv-python-headless
 numpy
-scikit-image
+scikit-image==0.19.3
 scipy
 pillow
 python-multipart
 pydantic
-opencv-python-headless
-scikit-image
