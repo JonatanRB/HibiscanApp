@@ -6,7 +6,7 @@ from typing import Tuple, Dict, Any
 
 import cv2
 import numpy as np
-from skimage.morphology import watershed
+from skimage.segmentation import watershed
 from scipy import ndimage as ndi  # viene con scipy; si no lo tienes: pip install scipy
 from PIL import Image
 
