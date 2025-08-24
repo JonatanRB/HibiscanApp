@@ -6,3 +6,6 @@ scikit-image
 scipy
 pillow
 python-multipart
+pydantic
+opencv-python-headless
+scikit-image
