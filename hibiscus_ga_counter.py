@@ -155,7 +155,7 @@ def count_objects(mask: np.ndarray, img: np.ndarray, min_area: int, max_area: in
 # -----------------------------
 
 class SimpleGA:
-    def __init__(self, pop_size=30, generations=25, elite=4, mutation_prob=0.35):
+    def __init__(self, pop_size=20, generations=15, elite=2, mutation_prob=0.3):
         self.pop_size = pop_size #Tamaño de la poblacion
         self.generations = generations #Numero de generaciones
         self.elite = elite #Mejores individuos que se conservan
