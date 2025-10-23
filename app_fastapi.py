@@ -8,16 +8,14 @@ import cv2
 from PIL import Image
 from fastapi.middleware.cors import CORSMiddleware
 
-from hibiscus_ga_counter import process_image  # reutilizamos la lógica de archivo
-
 app = FastAPI(title="Hibiscus Fruit Counter API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Permite todos los orígenes (puedes restringirlo si quieres)
+    allow_origins=["*"],  # Permite todos los orígenes (ajústalo en producción)
     allow_credentials=True,
-    allow_methods=["*"],  # Permite todos los métodos (GET, POST, etc.)
-    allow_headers=["*"],  # Permite todos los encabezados
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 def save_upload_to_temp(upload: UploadFile) -> str:
@@ -48,4 +46,5 @@ async def count(file: UploadFile = File(...), optimize: bool = Query(False), ann
 
         return JSONResponse(payload)
     except Exception as e:
+        print("❌ Error en /count:", e)
         return JSONResponse({"error": str(e)}, status_code=400)
