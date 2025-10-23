@@ -11,6 +11,14 @@ from hibiscus_ga_counter import process_image  # reutilizamos la lógica de arch
 
 app = FastAPI(title="Hibiscus Fruit Counter API", version="1.0.0")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Permite todos los orígenes (puedes restringirlo si quieres)
+    allow_credentials=True,
+    allow_methods=["*"],  # Permite todos los métodos (GET, POST, etc.)
+    allow_headers=["*"],  # Permite todos los encabezados
+)
+
 def save_upload_to_temp(upload: UploadFile) -> str:
     import tempfile, os
     suffix = "." + (upload.filename.split(".")[-1] if "." in upload.filename else "png")
