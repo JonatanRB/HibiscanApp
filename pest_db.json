@@ -1,0 +1,106 @@
+{
+  "pests": [
+    {
+      "id": "spodoptera_frugiperda",
+      "name": "Gusano cogollero (Spodoptera frugiperda)",
+      "common_names": [
+        "gusano cogollero",
+        "fall armyworm"
+      ],
+      "notes": "Principal plaga del maíz; oruga que come hojas y cogollos.",
+      "attributes": {
+        "host_maize": 0.95,
+        "chews_leaves": 0.95,
+        "frass_present": 0.9,
+        "nocturnal": 0.8,
+        "larva_visible_on_whorl": 0.9,
+        "causes_dead_hearts": 0.7
+      }
+    },
+    {
+      "id": "ostrinia_nubilalis",
+      "name": "Barrenador del maíz (Ostrinia nubilalis)",
+      "common_names": [
+        "barrenador",
+        "corn borer"
+      ],
+      "notes": "Larva perfora tallos y mazorcas; síntomas internos y marchitez.",
+      "attributes": {
+        "host_maize": 0.9,
+        "chews_leaves": 0.4,
+        "frass_present": 0.6,
+        "larva_inside_stem": 0.9,
+        "holes_in_stem": 0.8,
+        "causes_dead_hearts": 0.6
+      }
+    },
+    {
+      "id": "tuta_absoluta",
+      "name": "Minador de la hoja de tomate (Tuta absoluta)",
+      "common_names": [
+        "tuta absoluta",
+        "minador del tomate"
+      ],
+      "notes": "Ataca tomate; galerías en hojas y frutos y defoliación.",
+      "attributes": {
+        "host_tomato": 0.95,
+        "leaf_mines": 0.95,
+        "small_holes_in_leaves": 0.9,
+        "high_reproduction": 0.9,
+        "larva_small_and_green": 0.7
+      }
+    },
+    {
+      "id": "bemisia_tabaci",
+      "name": "Mosca blanca (Bemisia tabaci)",
+      "common_names": [
+        "mosca blanca",
+        "whitefly"
+      ],
+      "notes": "Pequeños insectos en envés de hojas; succión y melaza.",
+      "attributes": {
+        "sucking_insect": 0.95,
+        "white_tiny_insects_on_underside": 0.95,
+        "honeydew_exudate": 0.9,
+        "transmits_viruses": 0.7
+      }
+    },
+    {
+      "id": "helicoverpa_armigera",
+      "name": "Helicoverpa (gusano del algodón/tomate)",
+      "common_names": [
+        "gusano del algodón",
+        "Helicoverpa"
+      ],
+      "notes": "Oruga polífaga que come flores, frutos y hojas.",
+      "attributes": {
+        "chews_flowers_and_fruits": 0.9,
+        "polyphagous": 0.85,
+        "visible_caterpillar": 0.9,
+        "frass_present": 0.7
+      }
+    }
+  ],
+  "questions": {
+    "host_maize": "¿El cultivo afectado es maíz?",
+    "chews_leaves": "¿Ves signos de masticación (bordes irregulares, agujeros grandes)?",
+    "frass_present": "¿Hay excremento (frass) visible cerca de las hojas o cogollos?",
+    "nocturnal": "¿El daño parece más activo durante la noche? (observado en la mañana con daño fresco)",
+    "larva_visible_on_whorl": "¿Ves orugas dentro del cogollo/espiral de la planta?",
+    "causes_dead_hearts": "¿Las plantas presentan \"dead heart\" (tallo central seco/roto)?",
+    "larva_inside_stem": "¿Hay larvas dentro del tallo?",
+    "holes_in_stem": "¿Notas agujeros en los tallos?",
+    "host_tomato": "¿El cultivo afectado es tomate?",
+    "leaf_mines": "¿Hay galerías o minas en las hojas?",
+    "small_holes_in_leaves": "¿Ves hoyitos pequeños en las hojas?",
+    "high_reproduction": "¿La plaga parece multiplicarse muy rápido (muchos individuos)?",
+    "larva_small_and_green": "¿Las larvas son pequeñas y de color verdoso?",
+    "sucking_insect": "¿El insecto parece succionar (hojas pegajosas, amarillamiento)?",
+    "white_tiny_insects_on_underside": "¿Hay insectos blancos muy pequeños en el envés de las hojas?",
+    "honeydew_exudate": "¿Notas melaza o residuo pegajoso en las hojas?",
+    "transmits_viruses": "¿Se observan síntomas de virus en plantas (moteado, deformaciones)?",
+    "chews_flowers_and_fruits": "¿Se comen flores y frutos?",
+    "polyphagous": "¿Ataca muchos tipos de cultivos?",
+    "visible_caterpillar": "¿Ves orugas grandes y visibles?"
+  }
+}
