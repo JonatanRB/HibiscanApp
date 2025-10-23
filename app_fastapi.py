@@ -1,25 +1,22 @@
+import os
 import base64
-import io
+import tempfile
 from fastapi import FastAPI, File, UploadFile, Query
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel
-import numpy as np
-import cv2
-from PIL import Image
 from fastapi.middleware.cors import CORSMiddleware
+from hibiscus_ga_counter import process_image
 
 app = FastAPI(title="Hibiscus Fruit Counter API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Permite todos los orígenes (ajústalo en producción)
+    allow_origins=["*"],  # Puedes restringir a tu dominio frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 def save_upload_to_temp(upload: UploadFile) -> str:
-    import tempfile, os
     suffix = "." + (upload.filename.split(".")[-1] if "." in upload.filename else "png")
     fd, path = tempfile.mkstemp(suffix=suffix)
     with os.fdopen(fd, "wb") as f:
@@ -40,11 +37,18 @@ async def count(file: UploadFile = File(...), optimize: bool = Query(False), ann
         }
 
         if annotate:
-            with open(result["output_image"], "rb") as f:
-                b = f.read()
-            payload["annotated_image_base64"] = base64.b64encode(b).decode("ascii")
+            output_path = result.get("output_image")
+            if os.path.exists(output_path):
+                print(f"✅ Imagen anotada generada: {output_path}")
+                with open(output_path, "rb") as f:
+                    b = f.read()
+                payload["annotated_image_base64"] = base64.b64encode(b).decode("ascii")
+            else:
+                print(f"⚠️ No se encontró la imagen anotada: {output_path}")
 
         return JSONResponse(payload)
+
     except Exception as e:
         print("❌ Error en /count:", e)
         return JSONResponse({"error": str(e)}, status_code=400)
+
