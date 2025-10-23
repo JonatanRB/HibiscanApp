@@ -6,6 +6,7 @@ from pydantic import BaseModel
 import numpy as np
 import cv2
 from PIL import Image
+from fastapi.middleware.cors import CORSMiddleware
 
 from hibiscus_ga_counter import process_image  # reutilizamos la lógica de archivo
 
